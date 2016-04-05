@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>252</y>
+      <w>192</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Admin
+Package::CMS
+
+--
+-admin_id:int
+
+
+--
+
+#authenticte_user(User_portal u):string
+#add_reviewers(User_portal u,paper p):string
+#assign_paper(User_portal u,paper p):void
+#modify_acceptance_criteria():void
+#re_assign_paper(User_portal u,paper p):void
+#add_schedule_venue(conference c):void
+#modify_schedule_venue(conference c):void
+#notify_authors(notify_author_list l[]):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>108</x>
+      <y>0</y>
+      <w>138</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;User_portal&gt;&gt;
+Package::CMS
+
+--
+-user_id : int
+-user_name : string
+-password : string
+-first_name : string
+-middle_name :string
+-last_name : string
+-affiliation: string
+-organistaion:string
+-phone : string
+-email :string
+-additional_contact: string
+-creation_date: string
+-user_type :string
+
+--
+#login(username,password):int
+#do_register():int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>426</y>
+      <w>138</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>Reviewer
+Package::CMS
+
+--
+-reviewer_id:int
+
+--
+
+#approve(paper p): string
+#de_aasign(paper p):string
+#add_comment(review r):string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>306</y>
+      <w>162</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>Author
+Package::CMS
+
+--
+-author_id:int
+
+--
+#sign_up(): void
+#submit_paper(paper p):void
+#pay(author_id id,PaymentService):string
+#resubmission(paper p):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>228</x>
+      <y>210</y>
+      <w>420</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;680.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>456</y>
+      <w>150</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>Paper
+Package::CMS
+--
+-paper_id: int
+-paper_title: String
+-abstract: String
+-keywords: List&lt;String&gt;
+-content_type: String
+-date_proposed: Date
+-status: String
+-authors:List&lt;Author&gt;
+--
+#changeStatus(String): Void
+#get_all_reviews(Review r):reviews</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>24</y>
+      <w>150</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>Conference
+Package::CMS
+--
+-conference_id: int
+-name: String
+-topic: String
+-startDate: Date
+-endDate: Date
+-URL : String
+-location: String
+--
+#set_phase(Phase p):void
+#create_phase(Phase p):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>492</y>
+      <w>126</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>Review
+Package::CMS
+--
+-review_id: int
+-paper_id : int
+-reviewer_id : int
+-rating : int
+-comments : String
+-status: String
+-submittedDate: Date
+--
+-changeStatus(String): void
+-notify_status():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>312</y>
+      <w>132</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+</panel_attributes>
+    <additional_attributes>10.0;290.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>132</x>
+      <y>456</y>
+      <w>336</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+m2=1
+</panel_attributes>
+    <additional_attributes>540.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>474</y>
+      <w>138</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;70.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>870</x>
+      <y>18</y>
+      <w>126</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Date&gt;&gt;
+Package::CMS
+--
+-Day:int
+-Month: int
+-Year:int
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>666</x>
+      <y>24</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Phase&gt;&gt;
+Package::CMS
+--
+-Conference_Id:Conference
+-Phase_Id: int
+-Phase_Name:string
+-Start_Date: Date
+-EndDate: Date
+--
+#update_startDate(Date d):void
+#update_endDate(Date d):void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>36</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+m2=1
+</panel_attributes>
+    <additional_attributes>330.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>174</y>
+      <w>300</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*
+</panel_attributes>
+    <additional_attributes>10.0;10.0;480.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>276</x>
+      <y>330</y>
+      <w>192</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*
+</panel_attributes>
+    <additional_attributes>10.0;10.0;300.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>90</x>
+      <y>210</y>
+      <w>60</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;80.0;60.0;10.0;60.0;10.0;360.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>174</x>
+      <y>210</y>
+      <w>18</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>90</x>
+      <y>414</y>
+      <w>606</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;370.0;990.0;370.0;990.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>786</x>
+      <y>36</y>
+      <w>96</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>132</x>
+      <y>456</y>
+      <w>90</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*
+</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1158</x>
+      <y>528</y>
+      <w>126</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>DebitCard
+--
+
+--
++pay(amount:Float):void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>984</x>
+      <y>372</y>
+      <w>126</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+PaymentService
+--
+-banks:List&lt;Bank&gt;
+--
++pay(amount:Float):void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>798</x>
+      <y>372</y>
+      <w>126</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Bank
+--
+-redirect_URL:string
+--
++pay(amount:Float):void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>528</y>
+      <w>126</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>NetBanking
+--
+
+--
++pay(amount:Float):void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>990</x>
+      <y>528</y>
+      <w>126</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>CreditCard
+--
+
+--
++pay(amount:Float):void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1038</x>
+      <y>450</y>
+      <w>18</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>870</x>
+      <y>450</y>
+      <w>186</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>290.0;10.0;290.0;80.0;10.0;80.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1038</x>
+      <y>450</y>
+      <w>204</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;320.0;80.0;320.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>918</x>
+      <y>396</y>
+      <w>78</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1206</x>
+      <y>342</y>
+      <w>126</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Payment
+--
+-service:PaymentService
+-- </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1104</x>
+      <y>384</y>
+      <w>114</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>210</y>
+      <w>786</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+</panel_attributes>
+    <additional_attributes>1290.0;270.0;930.0;30.0;370.0;20.0;10.0;160.0</additional_attributes>
+  </element>
+</diagram>

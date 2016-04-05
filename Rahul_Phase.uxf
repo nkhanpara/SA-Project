@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>180</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Phase&gt;&gt;
+Package::CMS
+--
+-Conference_Id:Conference
+-Phase_Id: int
+-Phase_Name:string
+-Start_Date: Date
+-EndDate: Date
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>130</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Date&gt;&gt;
+Package::CMS
+--
+-Day:int
+-Month: int
+-Year:int
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

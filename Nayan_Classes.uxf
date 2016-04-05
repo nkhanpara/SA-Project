@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>70</x>
+      <y>50</y>
+      <w>250</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>Paper
+Package::CMS
+--
+-paper_id: int
+-paper_title: String
+-abstract: String
+-keywords: List&lt;String&gt;
+-content_type: String
+-date_proposed: Date
+-status: String
+-authors:List&lt;Author&gt;
+--
+#changeStatus(String): Void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>50</y>
+      <w>250</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Conference&gt;&gt;
+Package::CMS
+--
+-conference_id: int
+-name: String
+-topic: String
+-startDate: Date
+-endDate: Date
+-URL : String
+-location: String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>50</y>
+      <w>210</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Review&gt;&gt;
+Package::CMS
+--
+-review_id: int
+-paper_id : int
+-reviewer_id : int
+-rating : int
+-comments : String
+-status: String
+-submittedDate: Date
+--
+#changeStatus(String): Void</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
